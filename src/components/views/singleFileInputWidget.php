@@ -17,7 +17,7 @@
  */
 
 use floor12\files\assets\IconHelper;
-use yii\bootstrap\BootstrapPluginAsset;
+use yii\bootstrap4\BootstrapPluginAsset;
 use yii\db\ActiveRecord;
 use yii\helpers\Html;
 use yii\web\View;
@@ -36,14 +36,15 @@ if (YII_ENV == 'test') // This code is only for testing
 
     ]) ?>
 
-<div class="floor12-files-widget-single-block files-widget-block" id="files-widget-block_<?= $block_id ?>" data-ratio="<?= $ratio ?>">
+    <div class="floor12-files-widget-single-block files-widget-block" id="files-widget-block_<?= $block_id ?>" data-ratio="<?= $ratio ?>">
     <button class="<?= $uploadButtonClass ?>" type="button">
         <div class="icon"><?= IconHelper::PLUS ?></div>
         <?= $uploadButtonText ?>
     </button>
     <?= Html::hiddenInput((new ReflectionClass($model))->getShortName() . "[{$attribute}_ids][]", null) ?>
     <div class="floor12-files-widget-list">
-        <?php if ($model->$attribute) echo $this->render('@vendor/floor12/yii2-module-files/src/views/default/_single', ['model' => $model->$attribute, 'ratio' => $ratio]) ?>
+        <?php if ($model->$attribute)
+            echo $this->render('@vendor/floor12/yii2-module-files/src/views/default/_single', ['model' => $model->$attribute, 'ratio' => $ratio]) ?>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="clearfix"></div>
-</div>
