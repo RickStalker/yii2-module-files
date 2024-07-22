@@ -6,11 +6,12 @@
  * and open the template in the editor.
  */
 
-namespace floor12\files\assets;
+namespace rickstalker\files\assets;
 
 use yii\web\AssetBundle;
 
-class CropperAsset extends AssetBundle {
+class CropperAsset extends AssetBundle
+{
 
     public $sourcePath = '@bower';
     public $css = [

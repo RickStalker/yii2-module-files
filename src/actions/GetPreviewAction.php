@@ -1,9 +1,9 @@
 <?php
 
-namespace floor12\files\actions;
+namespace rickstalker\files\actions;
 
-use floor12\files\logic\ImagePreviewer;
-use floor12\files\models\File;
+use rickstalker\files\logic\ImagePreviewer;
+use rickstalker\files\models\File;
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;
@@ -34,9 +34,11 @@ class GetPreviewAction extends Action
         $this->loadAndCheckModel($hash);
         $this->width = $width;
 
-        if ($width &&
+        if (
+            $width &&
             $this->model->content_type !== 'image/svg+xml' &&
-            $this->model->content_type !== 'image/svg') {
+            $this->model->content_type !== 'image/svg'
+        ) {
             $this->sendPreview($width, $webp);
         } else {
             $this->sendAsIs();

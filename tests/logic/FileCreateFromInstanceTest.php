@@ -6,13 +6,13 @@
  * Time: 12:45
  */
 
-namespace floor12\files\tests\logic;
+namespace rickstalker\files\tests\logic;
 
 
 use ArgumentCountError;
-use floor12\files\logic\FileCreateFromInstance;
-use floor12\files\tests\data\TestModel;
-use floor12\files\tests\TestCase;
+use rickstalker\files\logic\FileCreateFromInstance;
+use rickstalker\files\tests\data\TestModel;
+use rickstalker\files\tests\TestCase;
 use yii\web\BadRequestHttpException;
 use yii\web\UploadedFile;
 

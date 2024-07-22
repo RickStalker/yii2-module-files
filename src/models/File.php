@@ -6,11 +6,11 @@
  * Time: 11:23
  */
 
-namespace floor12\files\models;
+namespace rickstalker\files\models;
 
 
 use ErrorException;
-use floor12\files\assets\IconHelper;
+use rickstalker\files\assets\IconHelper;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\helpers\Url;
@@ -285,7 +285,7 @@ class File extends ActiveRecord
      * @return bool
      */
 
-//    public function imageCreateFromAny()
+    //    public function imageCreateFromAny()
 //    {
 //        $type = exif_imagetype($this->rootPath);
 //        $allowedTypes = array(

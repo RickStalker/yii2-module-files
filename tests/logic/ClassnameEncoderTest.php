@@ -6,11 +6,11 @@
  * Time: 12:45
  */
 
-namespace floor12\files\tests\logic;
+namespace rickstalker\files\tests\logic;
 
 
-use floor12\files\logic\ClassnameEncoder;
-use floor12\files\tests\TestCase;
+use rickstalker\files\logic\ClassnameEncoder;
+use rickstalker\files\tests\TestCase;
 
 class ClassnameEncoderTest extends TestCase
 {
@@ -20,7 +20,7 @@ class ClassnameEncoderTest extends TestCase
     public function testEncodeFullClassName()
     {
         $testname = 'test\class\Name';
-        $encoded = (string)new ClassnameEncoder($testname);
+        $encoded = (string) new ClassnameEncoder($testname);
         $this->assertEquals('test\\\\class\\\\Name', $encoded);
     }
 
@@ -30,7 +30,7 @@ class ClassnameEncoderTest extends TestCase
     public function testEncodeClassName()
     {
         $testname = 'testname';
-        $encoded = (string)new ClassnameEncoder($testname);
+        $encoded = (string) new ClassnameEncoder($testname);
         $this->assertEquals($encoded, $testname);
     }
 
@@ -40,7 +40,7 @@ class ClassnameEncoderTest extends TestCase
     public function testEncodeEmptyClassName()
     {
         $testname = '';
-        $encoded = (string)new ClassnameEncoder($testname);
+        $encoded = (string) new ClassnameEncoder($testname);
         $this->assertEquals($encoded, $testname);
     }
 

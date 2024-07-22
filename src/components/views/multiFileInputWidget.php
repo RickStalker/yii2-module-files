@@ -17,7 +17,7 @@
  *
  */
 
-use floor12\files\assets\IconHelper;
+use rickstalker\files\assets\IconHelper;
 use yii\bootstrap4\BootstrapPluginAsset;
 use yii\db\ActiveRecord;
 use yii\helpers\Html;
@@ -46,7 +46,7 @@ if (YII_ENV == 'test')
     <div class="floor12-files-widget-list floor12-files-widget-list-multi" data-field="<?= $attribute ?>">
         <?php if ($model->$attribute)
             foreach ($model->$attribute as $file)
-                echo $this->render('@vendor/floor12/yii2-module-files/src/views/default/_file', ['model' => $file, 'ratio' => $ratio]) ?>
+                echo $this->render('@vendor/rickstalker/yii2-module-files/src/views/default/_file', ['model' => $file, 'ratio' => $ratio]) ?>
             </div>
             <div class="clearfix"></div>
         </div>

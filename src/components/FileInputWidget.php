@@ -6,10 +6,10 @@
  * Time: 16:00
  */
 
-namespace floor12\files\components;
+namespace rickstalker\files\components;
 
-use floor12\files\assets\FileInputWidgetAsset;
-use floor12\files\logic\ClassnameEncoder;
+use rickstalker\files\assets\FileInputWidgetAsset;
+use rickstalker\files\logic\ClassnameEncoder;
 use Yii;
 use yii\helpers\Url;
 use yii\jui\InputWidget;
@@ -60,7 +60,7 @@ class FileInputWidget extends InputWidget
         $i18n->translations['files'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@vendor/floor12/yii2-module-files/src/messages',
+            'basePath' => '@vendor/rickstalker/yii2-module-files/src/messages',
         ];
     }
 

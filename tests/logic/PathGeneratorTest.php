@@ -6,13 +6,13 @@
  * Time: 12:45
  */
 
-namespace floor12\files\tests\logic;
+namespace rickstalker\files\tests\logic;
 
 
 use ArgumentCountError;
 use ErrorException;
-use floor12\files\logic\PathGenerator;
-use floor12\files\tests\TestCase;
+use rickstalker\files\logic\PathGenerator;
+use rickstalker\files\tests\TestCase;
 
 class PathGeneratorTest extends TestCase
 {
@@ -62,7 +62,7 @@ class PathGeneratorTest extends TestCase
      */
     public function testGeneratePath()
     {
-        $path = (string)new PathGenerator($this->storagePath);
+        $path = (string) new PathGenerator($this->storagePath);
         $pre_path = substr($path, 0, 6);
         $fullPath = "{$this->storagePath}{$pre_path}";
         $this->assertTrue(file_exists($fullPath), $fullPath);

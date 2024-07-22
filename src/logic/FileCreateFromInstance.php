@@ -6,11 +6,11 @@
  * Time: 12:56
  */
 
-namespace floor12\files\logic;
+namespace rickstalker\files\logic;
 
-use floor12\files\components\SimpleImage;
-use floor12\files\models\File;
-use floor12\files\models\FileType;
+use rickstalker\files\components\SimpleImage;
+use rickstalker\files\models\File;
+use rickstalker\files\models\FileType;
 use Yii;
 use yii\base\ErrorException;
 use yii\web\BadRequestHttpException;
@@ -19,7 +19,7 @@ use yii\web\UploadedFile;
 
 /**
  * Class FileCreateFromInstance
- * @package floor12\files\logic
+ * @package rickstalker\files\logic
  */
 class FileCreateFromInstance
 {
@@ -54,7 +54,7 @@ class FileCreateFromInstance
 
         if (isset($this->_owner->behaviors['files']->attributes[$this->_attribute]['validator'])) {
             foreach ($this->_owner->behaviors['files']->attributes[$this->_attribute]['validator'] as $validator) {
-                if ($validator->maxFiles && (int)$data['count'] > $validator->maxFiles) {
+                if ($validator->maxFiles && (int) $data['count'] > $validator->maxFiles) {
                     throw new BadRequestHttpException('The maximum number of files has been exceeded: ' . $validator->maxFiles);
                 }
 

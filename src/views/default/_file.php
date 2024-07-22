@@ -11,9 +11,9 @@
  *
  */
 
-use floor12\files\assets\IconHelper;
-use floor12\files\models\File;
-use floor12\files\models\FileType;
+use rickstalker\files\assets\IconHelper;
+use rickstalker\files\models\File;
+use rickstalker\files\models\FileType;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -31,16 +31,7 @@ $doc_contents = [
 
 <div class="btn-group files-btn-group">
 
-    <div data-title="<?= $model->title ?>" id="yii2-file-object-<?= $model->id ?>"
-         class="dropdown-toggle btn-group floor12-file-object <?= ($model->type == FileType::IMAGE) ? "floor12-file-object-image" : NULL ?>"
-         style="<?= ($model->type == FileType::IMAGE) ? "background-image: url(" . $model->getPreviewWebPath(160) . ")" : NULL ?>"
-         data-hash="<?= $model->hash ?>"
-         data-filename="<?= $model->getHref() ?>"
-         data-title="<?= $model->title ?>"
-         data-alt="<?= $model->alt ?>"
-         data-toggle="dropdown"
-         aria-haspopup="true"
-         aria-expanded="false" title="<?= $model->title ?>">
+    <div data-title="<?= $model->title ?>" id="yii2-file-object-<?= $model->id ?>" class="dropdown-toggle btn-group floor12-file-object <?= ($model->type == FileType::IMAGE) ? "floor12-file-object-image" : NULL ?>" style="<?= ($model->type == FileType::IMAGE) ? "background-image: url(" . $model->getPreviewWebPath(160) . ")" : NULL ?>" data-hash="<?= $model->hash ?>" data-filename="<?= $model->getHref() ?>" data-title="<?= $model->title ?>" data-alt="<?= $model->alt ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="<?= $model->title ?>">
 
 
         <?= Html::hiddenInput((new ReflectionClass($model->class))->getShortName() . "[{$model->field}_ids][]", $model->id, ['class' => 'f12-file-input']) ?>
@@ -69,8 +60,7 @@ $doc_contents = [
         </li>
         <?php if (in_array($model->content_type, $doc_contents)): ?>
             <li>
-                <a href="https://view.officeapps.live.com/op/view.aspx?src=<?= Yii::$app->request->hostInfo . $model->href ?>}"
-                   target="_blank" data-pjax="0">
+                <a href="https://view.officeapps.live.com/op/view.aspx?src=<?= Yii::$app->request->hostInfo . $model->href ?>}" target="_blank" data-pjax="0">
                     <?= IconHelper::VIEW ?>
                     <?= Yii::t('files', 'View') ?>
                 </a>
@@ -111,5 +101,3 @@ $doc_contents = [
     </ul>
 
 </div>
-
-

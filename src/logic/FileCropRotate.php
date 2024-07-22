@@ -6,11 +6,11 @@
  * Time: 19:37
  */
 
-namespace floor12\files\logic;
+namespace rickstalker\files\logic;
 
 
-use floor12\files\models\File;
-use floor12\files\models\FileType;
+use rickstalker\files\models\File;
+use rickstalker\files\models\FileType;
 use Yii;
 use yii\base\ErrorException;
 use yii\web\BadRequestHttpException;
@@ -39,11 +39,11 @@ class FileCropRotate
         if (!file_exists($this->_file->rootPath))
             throw new BadRequestHttpException('File not found in file storage.');
 
-        $this->_height = (int)$data['height'];
-        $this->_width = (int)$data['width'];
-        $this->_top = (int)$data['top'];
-        $this->_left = (int)$data['left'];
-        $this->_rotated = (int)($data['rotated'] ?? 0);
+        $this->_height = (int) $data['height'];
+        $this->_width = (int) $data['width'];
+        $this->_top = (int) $data['top'];
+        $this->_left = (int) $data['left'];
+        $this->_rotated = (int) ($data['rotated'] ?? 0);
 
         if (!$this->_height && !$this->_width) {
             list($this->_width, $this->_height) = getimagesize($this->_file->rootPath);
@@ -108,16 +108,16 @@ class FileCropRotate
 
         }
         switch ($type) {
-            case 1 :
+            case 1:
                 $im = imageCreateFromGif($this->_file->rootPath);
                 break;
-            case 2 :
+            case 2:
                 $im = imageCreateFromJpeg($this->_file->rootPath);
                 break;
-            case 3 :
+            case 3:
                 $im = imageCreateFromPng($this->_file->rootPath);
                 break;
-            case 6 :
+            case 6:
                 $im = imageCreateFromBmp($this->_file->rootPath);
                 break;
         }

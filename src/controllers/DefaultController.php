@@ -6,16 +6,16 @@
  * Time: 12:03
  */
 
-namespace floor12\files\controllers;
+namespace rickstalker\files\controllers;
 
-use floor12\files\actions\GetFileAction;
-use floor12\files\actions\GetPreviewAction;
-use floor12\files\components\FileInputWidget;
-use floor12\files\logic\FileAlt;
-use floor12\files\logic\FileCreateFromInstance;
-use floor12\files\logic\FileCropRotate;
-use floor12\files\logic\FileRename;
-use floor12\files\models\File;
+use rickstalker\files\actions\GetFileAction;
+use rickstalker\files\actions\GetPreviewAction;
+use rickstalker\files\components\FileInputWidget;
+use rickstalker\files\logic\FileAlt;
+use rickstalker\files\logic\FileCreateFromInstance;
+use rickstalker\files\logic\FileCropRotate;
+use rickstalker\files\logic\FileRename;
+use rickstalker\files\models\File;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\filters\VerbFilter;
@@ -78,7 +78,7 @@ class DefaultController extends Controller
             throw new BadRequestHttpException('File-form token is wrong or missing.');
     }
 
-     /**
+    /**
      * @param array $hash
      * @param string $title
      */
@@ -87,7 +87,7 @@ class DefaultController extends Controller
         $md5 = md5(serialize($hash));
         $files = File::find()->where(["IN", "hash", $hash])->all();
 
-        $zip = new  ZipArchive;
+        $zip = new ZipArchive;
         $path = Yii::getAlias("@runtime/zip");
         if (!file_exists($path)) {
             mkdir($path, 0777, true);

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace floor12\files\models;
+namespace rickstalker\files\models;
 
 
 use yii2mod\enum\helpers\BaseEnum;

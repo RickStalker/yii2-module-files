@@ -15,8 +15,8 @@
  * @var $files File[]
  */
 
-use floor12\files\assets\IconHelper;
-use floor12\files\models\File;
+use rickstalker\files\assets\IconHelper;
+use rickstalker\files\models\File;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\web\View;
@@ -24,7 +24,7 @@ use yii\web\View;
 ?>
 
 <div class="files-block">
-    <?php if ($title) : ?>
+    <?php if ($title): ?>
         <label><?= $title ?></label>
     <?php endif; ?>
     <ul>
@@ -37,8 +37,7 @@ use yii\web\View;
         } ?>
         <?php if ($downloadAll && sizeof($files) > 1) { ?>
             <li>
-                <a class="f12-files-btn-download-all"
-                   onclick="filesDownloadAll('<?= $zipTitle ?>',event,'<?= Url::toRoute(['/files/default/zip']) ?>')">
+                <a class="f12-files-btn-download-all" onclick="filesDownloadAll('<?= $zipTitle ?>',event,'<?= Url::toRoute(['/files/default/zip']) ?>')">
                     <?= IconHelper::DOWNLOAD ?>
                     <?= Yii::t('files', 'Download all') ?>
                 </a>

@@ -6,12 +6,12 @@
  * Time: 8:32
  */
 
-namespace floor12\files\controllers;
+namespace rickstalker\files\controllers;
 
 
-use floor12\files\models\File;
-use floor12\files\models\FileType;
-use floor12\files\models\VideoStatus;
+use rickstalker\files\models\File;
+use rickstalker\files\models\FileType;
+use rickstalker\files\models\VideoStatus;
 use Throwable;
 use Yii;
 use yii\console\Controller;
@@ -32,9 +32,10 @@ class ConsoleController extends Controller
     {
         $time = strtotime('- 6 hours');
         $files = File::find()->where(['object_id' => '0'])->andWhere(['<', 'created', $time])->all();
-        if ($files) foreach ($files as $file) {
-            $file->delete();
-        }
+        if ($files)
+            foreach ($files as $file) {
+                $file->delete();
+            }
     }
 
     function actionClear()
@@ -51,12 +52,14 @@ class ConsoleController extends Controller
                 $path3 = $path2 . '/' . $folder2;
                 if ($this->checkFolderItem($folder2)) {
                     continue;
-                };
+                }
+                ;
                 foreach (scandir($path3) as $filename) {
                     $path4 = $path3 . '/' . $filename;
                     if ($this->checkFolderItem($filename)) {
                         continue;
-                    };
+                    }
+                    ;
                     $dbFileName = "/{$folder1}/{$folder2}/{$filename}";
                     if (is_file($path4)) {
                         $this->stdout($path4 . "...");
@@ -138,8 +141,11 @@ class ConsoleController extends Controller
         $newFilePath = $file->rootPath . ".mp4";
         $command = Yii::$app->getModule('files')->ffmpeg . " -i {$file->rootPath} -vf scale={$width}:{$height} -threads 4 {$newFilePath}";
         echo $command . PHP_EOL;
-        exec($command,
-            $outout, $result);
+        exec(
+            $command,
+            $outout,
+            $result
+        );
         if ($result == 0) {
             @unlink($file->rootPath);
             $file->filename = $newFileName;
@@ -154,16 +160,20 @@ class ConsoleController extends Controller
     }
 
     protected
-    function getVideoWidth($classname, $field)
-    {
+        function getVideoWidth(
+        $classname,
+        $field
+    ) {
         /** @var ActiveRecord $ownerClassObject */
         $ownerClassObject = new $classname;
         return $ownerClassObject->getBehavior('files')->attributes[$field]['videoWidth'] ?? 1280;
     }
 
     protected
-    function getVideoHeight($classname, $field)
-    {
+        function getVideoHeight(
+        $classname,
+        $field
+    ) {
         /** @var ActiveRecord $ownerClassObject */
         $ownerClassObject = new $classname;
         return $ownerClassObject->getBehavior('files')->attributes[$field]['videoHeight'] ?? -1;

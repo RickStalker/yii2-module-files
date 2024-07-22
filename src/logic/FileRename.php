@@ -6,16 +6,16 @@
  * Time: 10:39
  */
 
-namespace floor12\files\logic;
+namespace rickstalker\files\logic;
 
 
-use floor12\files\models\File;
+use rickstalker\files\models\File;
 use yii\web\BadRequestHttpException;
 use yii\web\NotFoundHttpException;
 
 /**
  * Class FileRename
- * @package floor12\files\logic
+ * @package rickstalker\files\logic
  * @property File $_file
  * @property string $_title
  */

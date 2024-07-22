@@ -40,12 +40,12 @@
   },
   "autoload": {
     "psr-4": {
-      "floor12\\files\\": "src"
+      "rickstalker\\files\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "floor12\\files\\tests\\": "tests"
+      "rickstalker\\files\\tests\\": "tests"
     }
   },
   "repositories": [

@@ -1,9 +1,9 @@
 <?php
 
-namespace floor12\files\components;
+namespace rickstalker\files\components;
 
-use floor12\files\assets\LightboxAsset;
-use floor12\files\models\File;
+use rickstalker\files\assets\LightboxAsset;
+use rickstalker\files\models\File;
 use yii\base\Widget;
 use yii\helpers\Html;
 
@@ -64,9 +64,11 @@ class PictureListWidget extends Widget
 
             $renderedPictures[] = Html::tag(
                 'li',
-                $widget, [
-                'class' => $this->classLi
-            ]);
+                $widget,
+                [
+                    'class' => $this->classLi
+                ]
+            );
         }
         return Html::tag('ul', implode($renderedPictures), [
             'class' => $this->classUl

@@ -6,7 +6,7 @@
  * Time: 11:40
  */
 
-namespace floor12\files\assets;
+namespace rickstalker\files\assets;
 
 
 class IconHelper

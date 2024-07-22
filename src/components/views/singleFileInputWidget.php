@@ -16,7 +16,7 @@
  *
  */
 
-use floor12\files\assets\IconHelper;
+use rickstalker\files\assets\IconHelper;
 use yii\bootstrap4\BootstrapPluginAsset;
 use yii\db\ActiveRecord;
 use yii\helpers\Html;
@@ -44,7 +44,7 @@ if (YII_ENV == 'test') // This code is only for testing
     <?= Html::hiddenInput((new ReflectionClass($model))->getShortName() . "[{$attribute}_ids][]", null) ?>
     <div class="floor12-files-widget-list">
         <?php if ($model->$attribute)
-            echo $this->render('@vendor/floor12/yii2-module-files/src/views/default/_single', ['model' => $model->$attribute, 'ratio' => $ratio]) ?>
+            echo $this->render('@vendor/rickstalker/yii2-module-files/src/views/default/_single', ['model' => $model->$attribute, 'ratio' => $ratio]) ?>
         </div>
         <div class="clearfix"></div>
     </div>

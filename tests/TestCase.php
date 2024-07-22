@@ -6,9 +6,9 @@
  * Time: 12:40
  */
 
-namespace floor12\files\tests;
+namespace rickstalker\files\tests;
 
-use floor12\files\tests\data\m180627_121715_files;
+use rickstalker\files\tests\data\m180627_121715_files;
 use Yii;
 use yii\console\Application;
 use yii\web\UrlManager;
@@ -33,7 +33,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     protected function setApp()
     {
         $files = [
-            'class' => 'floor12\files\Module',
+            'class' => 'rickstalker\files\Module',
             'storage' => '@app/storage',
         ];
         Yii::$app->setModule('files', $files);

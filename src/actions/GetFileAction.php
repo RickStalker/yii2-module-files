@@ -1,10 +1,10 @@
 <?php
 
-namespace floor12\files\actions;
+namespace rickstalker\files\actions;
 
-use floor12\files\components\SimpleImage;
-use floor12\files\models\File;
-use floor12\files\models\FileType;
+use rickstalker\files\components\SimpleImage;
+use rickstalker\files\models\File;
+use rickstalker\files\models\FileType;
 use Yii;
 use yii\base\Action;
 use yii\web\NotFoundHttpException;

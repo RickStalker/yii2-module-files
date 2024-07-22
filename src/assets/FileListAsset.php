@@ -6,7 +6,7 @@
  * Time: 21:28
  */
 
-namespace floor12\files\assets;
+namespace rickstalker\files\assets;
 
 
 use yii\web\AssetBundle;
@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
 
 class FileListAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/floor12/yii2-module-files/assets/';
+    public $sourcePath = '@vendor/rickstalker/yii2-module-files/assets/';
 
     public $css = [
         'yii2-floor12-files-block.css',
@@ -26,6 +26,6 @@ class FileListAsset extends AssetBundle
     public $depends = [
         'yii\web\JqueryAsset',
         'floor12\notification\NotificationAsset',
-        'floor12\files\assets\LightboxAsset'
+        'rickstalker\files\assets\LightboxAsset'
     ];
 }

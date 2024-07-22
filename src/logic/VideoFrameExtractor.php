@@ -1,7 +1,7 @@
 <?php
 
 
-namespace floor12\files\logic;
+namespace rickstalker\files\logic;
 
 use ErrorException;
 use Yii;

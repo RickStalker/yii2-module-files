@@ -6,14 +6,14 @@
  * Time: 14:45
  */
 
-namespace floor12\files;
+namespace rickstalker\files;
 
 use Yii;
 use yii\db\Connection;
 
 /**
  * Class Module
- * @package floor12\files
+ * @package rickstalker\files
  * @property string $token_salt
  * @property string $storage
  * @property string $controllerNamespace
@@ -24,7 +24,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'floor12\files\controllers';
+    public $controllerNamespace = 'rickstalker\files\controllers';
 
     /** Путь к файловому хранилищу
      * @var string
@@ -88,7 +88,7 @@ class Module extends \yii\base\Module
         $i18n->translations['files'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@vendor/floor12/yii2-module-files/src/messages',
+            'basePath' => '@vendor/rickstalker/yii2-module-files/src/messages',
         ];
     }
 

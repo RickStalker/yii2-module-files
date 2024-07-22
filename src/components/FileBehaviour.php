@@ -6,10 +6,10 @@
  * Time: 15:14
  */
 
-namespace floor12\files\components;
+namespace rickstalker\files\components;
 
 
-use floor12\files\models\File;
+use rickstalker\files\models\File;
 use Yii;
 use yii\base\Behavior;
 use yii\base\ErrorException;
@@ -69,20 +69,21 @@ class FileBehaviour extends Behavior
                     ]
                 )->execute();
 
-                if ($ids) foreach ($ids as $id) {
-                    if (empty($id))
-                        continue;
-                    $file = File::findOne($id);
-                    if ($file) {
-                        $file->object_id = $this->owner->id;
-                        $file->ordering = $order++;
-                        $file->save();
-                        if (!$file->save()) {
-                            throw new ErrorException('Невозможно обновить объект File.');
+                if ($ids)
+                    foreach ($ids as $id) {
+                        if (empty($id))
+                            continue;
+                        $file = File::findOne($id);
+                        if ($file) {
+                            $file->object_id = $this->owner->id;
+                            $file->ordering = $order++;
+                            $file->save();
+                            if (!$file->save()) {
+                                throw new ErrorException('Невозможно обновить объект File.');
+                            }
                         }
-                    }
 
-                }
+                    }
             }
         }
     }
@@ -116,8 +117,9 @@ class FileBehaviour extends Behavior
      * @param ActiveRecord $owner
      */
     public
-    function attach($owner)
-    {
+        function attach(
+        $owner
+    ) {
         parent::attach($owner);
 
         // Получаем валидаторы AR
@@ -128,7 +130,7 @@ class FileBehaviour extends Behavior
             foreach ($validators as $key => $validator) {
 
                 // Сначала пробегаемся по файловым валидаторам
-                if ($validator::className() == 'yii\validators\FileValidator' || $validator::className() == 'floor12\files\components\ReformatValidator') {
+                if ($validator::className() == 'yii\validators\FileValidator' || $validator::className() == 'rickstalker\files\components\ReformatValidator') {
                     foreach ($this->attributes as $field => $params) {
 
                         if (is_string($params)) {
@@ -168,10 +170,11 @@ class FileBehaviour extends Behavior
             }
 
         // Добавляем дефолтный валидатор для прилетающих айдишников
-        if ($this->attributes) foreach ($this->attributes as $fieldName => $fieldParams) {
-            $validator = Validator::createValidator('safe', $owner, ["{$fieldName}_ids"]);
-            $validators->append($validator);
-        }
+        if ($this->attributes)
+            foreach ($this->attributes as $fieldName => $fieldParams) {
+                $validator = Validator::createValidator('safe', $owner, ["{$fieldName}_ids"]);
+                $validators->append($validator);
+            }
     }
 
 
@@ -221,7 +224,8 @@ class FileBehaviour extends Behavior
                                 'object_id' => $this->owner->id,
                                 'field' => $att_name,
                                 'class' => $this->owner->className()
-                            ])
+                            ]
+                        )
                         ->orderBy('ordering ASC')
                         ->all();
                 else {
@@ -231,7 +235,8 @@ class FileBehaviour extends Behavior
                                 'object_id' => $this->owner->id,
                                 'field' => $att_name,
                                 'class' => $this->owner->className()
-                            ])
+                            ]
+                        )
                         ->orderBy('ordering ASC')
                         ->one();
                 }
@@ -245,8 +250,10 @@ class FileBehaviour extends Behavior
      * @inheritdoc
      */
     public
-    function __set($name, $value)
-    {
+        function __set(
+        $name,
+        $value
+    ) {
         $attribute = $this->getRealAttributeName($name);
 
         if (array_key_exists($attribute, $this->attributes))
@@ -259,8 +266,9 @@ class FileBehaviour extends Behavior
      * @return string
      */
     private
-    function getRealAttributeName($attribute)
-    {
+        function getRealAttributeName(
+        $attribute
+    ) {
         return str_replace("_ids", "", $attribute);
     }
 }

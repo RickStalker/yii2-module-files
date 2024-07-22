@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace floor12\files\assets;
+namespace rickstalker\files\assets;
 
 use yii\web\AssetBundle;
 

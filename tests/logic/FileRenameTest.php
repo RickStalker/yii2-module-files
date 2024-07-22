@@ -6,14 +6,14 @@
  * Time: 12:45
  */
 
-namespace floor12\files\tests\logic;
+namespace rickstalker\files\tests\logic;
 
 
 use ArgumentCountError;
-use floor12\files\logic\FileRename;
-use floor12\files\models\File;
-use floor12\files\models\FileType;
-use floor12\files\tests\TestCase;
+use rickstalker\files\logic\FileRename;
+use rickstalker\files\models\File;
+use rickstalker\files\models\FileType;
+use rickstalker\files\tests\TestCase;
 use Yii;
 
 class FileRenameTest extends TestCase

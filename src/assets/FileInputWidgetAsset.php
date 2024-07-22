@@ -6,7 +6,7 @@
  * Time: 21:28
  */
 
-namespace floor12\files\assets;
+namespace rickstalker\files\assets;
 
 
 use yii\web\AssetBundle;
@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
 
 class FileInputWidgetAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/floor12/yii2-module-files/assets/';
+    public $sourcePath = '@vendor/rickstalker/yii2-module-files/assets/';
 
     public $css = [
         'yii2-floor12-files.css',
@@ -26,7 +26,7 @@ class FileInputWidgetAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\jui\JuiAsset',
         'floor12\notification\NotificationAsset',
-        'floor12\files\assets\CropperAsset',
-        'floor12\files\assets\SimpleAjaxUploaderAsset',
+        'rickstalker\files\assets\CropperAsset',
+        'rickstalker\files\assets\SimpleAjaxUploaderAsset',
     ];
 }

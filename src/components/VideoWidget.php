@@ -1,11 +1,11 @@
 <?php
 
 
-namespace floor12\files\components;
+namespace rickstalker\files\components;
 
 
-use floor12\files\models\File;
-use floor12\files\models\FileType;
+use rickstalker\files\models\File;
+use rickstalker\files\models\FileType;
 use yii\base\Widget;
 use yii\helpers\Html;
 
